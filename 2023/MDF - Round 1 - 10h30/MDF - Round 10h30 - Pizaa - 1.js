@@ -1,0 +1,28 @@
+
+/*******
+* Read input from STDIN
+* Use: console.log()  to output your result.
+* Use: console.error() to output debug information into STDERR
+* ***/
+
+var input = [];
+
+readline_object.on("line", (value) => { //Read input values
+    input.push(value);
+})
+//Call ContestResponse when all inputs are read
+readline_object.on("close", ContestResponse); 
+
+
+function ContestResponse(){
+    //implement your code here using input array
+    
+    const save = []
+    for(let i = 1; i < input.length; i++){
+        const line = input[i].split(' ')
+        line.forEach(ingredient => {
+            if(save.indexOf(ingredient) === -1) save.push(ingredient)
+        })
+    }
+     console.log(save.length)
+}
