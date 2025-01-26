@@ -15,8 +15,6 @@ readline_object.on("close", ContestResponse);
 
 function ContestResponse(){
     //implement your code here using input array
-    // connus : nb de medailles de chaque pays. 
-    // incnnu : le classement
     var test = []
     
     for(let i = 1; i < input.length; i++){

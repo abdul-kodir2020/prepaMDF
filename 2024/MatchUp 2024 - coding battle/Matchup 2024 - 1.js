@@ -17,8 +17,8 @@ function ContestResponse(){
     //implement your code here using input array
     
     for(let i = 1; i < input.length; i++){
-        if(input[i].startsWith('42') && input[i].split('').reduce((acc, curr) => parseInt(acc) + parseInt(curr), 0) === 75)[
+        if(input[i].startsWith('42') && input[i].split('').reduce((acc, curr) => parseInt(acc) + parseInt(curr), 0) === 75){
             console.log(input[i])
-        ]
+        }
     }
 }
