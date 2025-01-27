@@ -1,3 +1,4 @@
+
 /*******
 * Read input from STDIN
 * Use: console.log()  to output your result.
@@ -15,17 +16,9 @@ readline_object.on("close", ContestResponse);
 
 function ContestResponse(){
     //implement your code here using input array
-    const [n, m, e] = input[0].split(' ').map(el => parseInt(el))
-    const lignes = input.slice(-m).map(element => element.split(' ').map(el => parseInt(el)))
+    const [equipe1, equipe2] = input[0].split('-').map(el => parseInt(el))
     
-    var current = e 
-    var response = 'NO'
-    
-    for(let i = 0; i < m; i++){
-        const ligne = lignes[i]
-        if(current >= ligne[0] && current <= ligne[1]) current = ligne[1]
-        if(current >= n) response = 'YES'
-    }
-    
-    console.log(response)
+    const points = equipe2 - equipe1
+
+    points < 0 ? console.log(0) : console.log(Math.floor(points / 3) + 1)
 }

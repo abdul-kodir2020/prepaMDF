@@ -26,14 +26,11 @@ function ContestResponse(){
         var distance = 0
         restaurants.forEach((restaurant, index) => {
             const dis = calculerDistance(commande[0], commande[1], restaurant[0], restaurant[1])
-            if(index === 0 ){
-                distance = dis
-            }
-            if(dis < distance) distance = dis
+            if(index === 0 || dis < distance) distance = dis
         })
         distanceTotale += (distance * 2)
     })
-    
+
     console.log(distanceTotale)
 }
 
