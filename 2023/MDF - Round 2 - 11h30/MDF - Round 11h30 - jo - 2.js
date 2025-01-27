@@ -18,13 +18,13 @@ function ContestResponse(){
     const nombreDeSaison = parseInt(input[0])
     var jourJ = parseInt(input[1]) + 1
     const joursSaison = input[2].split(' ').map(jour => parseInt(jour))
+    
     if(nombreDeSaison === 1){
         console.error(nombreDeSaison)
         console.log(1)
     }else{
         var test = 0
-        
-        
+
         while(jourJ >= 0){
             
             for(let i = 0; i < nombreDeSaison; i++){
@@ -36,8 +36,7 @@ function ContestResponse(){
                 }
             }
         }
-        
-        
+
         console.log(test)
     }
 }
