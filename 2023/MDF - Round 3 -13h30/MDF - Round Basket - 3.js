@@ -9,15 +9,15 @@ var input = [];
 readline_object.on("line", (value) => { //Read input values
     input.push(value);
 })
-//Call ContestResponse when all inputs are read
-readline_object.on("close", ContestResponse); 
+//Call ConcurrentPossibleResponse when all inputs are read
+readline_object.on("close", ConcurrentPossibleResponse); 
 
 
-function ContestResponse(){
+function ConcurrentPossibleResponse(){
     //implement your code here using input array
     const numbers = input[0].split(' ').map(el => parseInt(el))
     
-    const possible = {
+    const possibles = {
         '1' : [7],
         '2' : [6],
         '3' : [9],
@@ -30,7 +30,23 @@ function ContestResponse(){
         '0' : [8]
     }
     
-    numbers.forEach(number => {
-        
+    numbers.forEach((number, index) => {
+        const possible = possibles[number]
+
+        if (index === 0) {
+            possible.forEach(currentPossible => {
+                if(currentPossible + numbers[1] === numbers[2]) console.log(currentPossible + ' ' + numbers[1] + ' ' + numbers[2])
+            })
+        }else if(index === 1){
+            possible.forEach(currentPossible => {
+                if(numbers[0] + currentPossible === numbers[2]) console.log(numbers[0] + ' ' + currentPossible + ' ' + numbers[2])
+            })
+        }else{
+            possible.forEach(currentPossible => {
+                if(numbers[0] + numbers[1] === currentPossible) console.log(numbers[0] + ' ' + numbers[1] + ' ' + currentPossible)
+            })
+        }
     })
+
+    console.log('Impossible')
 }
