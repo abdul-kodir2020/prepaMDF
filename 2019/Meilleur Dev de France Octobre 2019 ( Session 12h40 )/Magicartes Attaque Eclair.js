@@ -20,11 +20,11 @@ function ContestResponse(){
     
     while(myCartes.length && sashaCartes.length){
         
-        const myLastCard = myCartes.pop()
-        const sashaLastCard = sashaCartes.pop()
+        const myLastCard = myCartes.shift()
+        const sashaLastCard = sashaCartes.shift()
         
-        if(myLastCard > sashaLastCard) myCartes.unshift( myLastCard )
-        if(myLastCard < sashaLastCard) sashaCartes.unshift( sashaLastCard )
+        if(myLastCard > sashaLastCard) myCartes.push( myLastCard )
+        if(myLastCard < sashaLastCard) sashaCartes.push( sashaLastCard )
 
     }
     
@@ -35,5 +35,4 @@ function ContestResponse(){
     }else{
         console.log('P')
     }
-
 }
